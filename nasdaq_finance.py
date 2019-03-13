@@ -97,5 +97,4 @@ if __name__ == "__main__":
     scraped_data = parse_finance_page(ticker)
     print("Writing scraped data to output file")
 
-    with open('%s-summary.json' % (ticker), 'w') as fp:
-        json.dump(scraped_data, fp, indent=4, ensure_ascii=False)
+    print (scraped_data)
