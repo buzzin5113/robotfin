@@ -43,7 +43,7 @@ def parse_finance_page(ticker):
             parser = html.fromstring(response.text)
             xpath_head = "//div[@id='qwidget_pageheader']//h1//text()"
             xpath_key_stock_table = '//div[@class="row overview-results relativeP"]//div[contains(@class,"table-table")]/div'
-            xpath_open_price = './/span[@class = "last-sale"]/following-sibling::span/text()'
+            xpath_open_price = './/span[@class = "last-sale"]/span'
             xpath_open_date = '//b[contains(text(),"Open Date:")]/following-sibling::span/text()'
             xpath_close_price = '//b[contains(text(),"Close Price:")]/following-sibling::span/text()'
             xpath_close_date = '//b[contains(text(),"Close Date:")]/following-sibling::span/text()'
