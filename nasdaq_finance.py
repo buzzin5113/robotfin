@@ -41,7 +41,7 @@ def parse_finance_page(ticker):
             # Adding random delay
             # sleep(randint(1, 3))
             parser = html.fromstring(response.text)
-            #xpath_head = "//div[@id='qwidget_pageheader']//h1//text()"
+            xpath_head = "//div[@id='qwidget_pageheader']//h1//text()"
             xpath_key_stock_table = '//div[@class="row overview-results relativeP"]//div[contains(@class,"table-table")]/div'
             #xpath_open_price = '//span[@class = "last-sale"]/span'
             #xpath_open_date = '//b[contains(text(),"Open Date:")]/following-sibling::span/text()'
