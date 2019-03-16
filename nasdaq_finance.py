@@ -39,29 +39,27 @@ def parse_finance_page(ticker):
 
             print("Parsing %s" % (url))
             # Adding random delay
-            sleep(randint(1, 3))
+            # sleep(randint(1, 3))
             parser = html.fromstring(response.text)
-            xpath_head = "//div[@id='qwidget_pageheader']//h1//text()"
+            #xpath_head = "//div[@id='qwidget_pageheader']//h1//text()"
             xpath_key_stock_table = '//div[@class="row overview-results relativeP"]//div[contains(@class,"table-table")]/div'
-            xpath_open_price = '//span[@class = "last-sale"]/span'
-            xpath_open_date = '//b[contains(text(),"Open Date:")]/following-sibling::span/text()'
-            xpath_close_price = '//b[contains(text(),"Close Price:")]/following-sibling::span/text()'
-            xpath_close_date = '//b[contains(text(),"Close Date:")]/following-sibling::span/text()'
+            #xpath_open_price = '//span[@class = "last-sale"]/span'
+            #xpath_open_date = '//b[contains(text(),"Open Date:")]/following-sibling::span/text()'
+            #xpath_close_price = '//b[contains(text(),"Close Price:")]/following-sibling::span/text()'
+            #xpath_close_date = '//b[contains(text(),"Close Date:")]/following-sibling::span/text()'
             xpath_key = './/div[@class="table-cell"]/b/text()'
             xpath_value = './/div[@class="table-cell"]/text()'
+            xpath_last_sale = './/span[@class="last-sale"]/text()'
 
             raw_name = parser.xpath(xpath_head)
             key_stock_table = parser.xpath(xpath_key_stock_table)
-            raw_open_price = parser.xpath(xpath_open_price)
-            raw_open_date = parser.xpath(xpath_open_date)
-            raw_close_price = parser.xpath(xpath_close_price)
-            raw_close_date = parser.xpath(xpath_close_date)
+            last_sale = parser.xpath(xpath_last_sale)
 
             company_name = raw_name[0].replace("Common Stock Quote & Summary Data", "").strip() if raw_name else ''
-            open_price = raw_open_price[0].strip() if raw_open_price else None
-            open_date = raw_open_date[0].strip() if raw_open_date else None
-            close_price = raw_close_price[0].strip() if raw_close_price else None
-            close_date = raw_close_date[0].strip() if raw_close_date else None
+            #open_price = raw_open_price[0].strip() if raw_open_price else None
+            #open_date = raw_open_date[0].strip() if raw_open_date else None
+            #close_price = raw_close_price[0].strip() if raw_close_price else None
+            #close_date = raw_close_date[0].strip() if raw_close_date else None
 
             # Grabbing ans cleaning keystock data
             for i in key_stock_table:
@@ -76,10 +74,7 @@ def parse_finance_page(ticker):
                 "company_name": company_name,
                 "ticker": ticker,
                 "url": url,
-                "open price": open_price,
-                "open_date": open_date,
-                "close_price": close_price,
-                "close_date": close_date,
+                "last_sale": last_sale,
                 "key_stock_data": key_stock_dict
             }
             return nasdaq_data
