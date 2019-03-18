@@ -133,6 +133,7 @@ if __name__ == "__main__":
     with open('stoks.csv', 'r') as file:
         for line in file:
 
+            print(line)
             ticker = line
             print("Fetching data for %s" % (ticker))
             scraped_data = parse_finance_page(ticker)
