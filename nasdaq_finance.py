@@ -134,11 +134,24 @@ if __name__ == "__main__":
     vName = scraped_data['company_name']
     vTicker = scraped_data['ticker']
     vPrice = scraped_data['last_sale']
+    vTarget = scraped_data['key_stock_data']['1 Year Target']
     vPE = scraped_data['key_stock_data']['P/E Ratio']
     vFPE = scraped_data['key_stock_data']['Forward P/E (1y)']
     vYield = scraped_data['key_stock_data']['Current Yield']
     vMax = scraped_data['key_stock_data']['52 Week High / Low']
     vMin = scraped_data['key_stock_data']['52 Week High / Low']
 
-    print("vName:" + vName)
-    print(vPE)
+    print("vName   :" + vName)
+    print("vTicker :" + vTicker)
+    print("vPrice  :" + vPrice)
+    print("vTarget :" + vTarget)
+    print("vPE     :" + vPE)
+    print("vFPE    :" + vFPE)
+    print("vYield  :" + vYield)
+    print("vMax    :" + vMax)
+    print("vMin    :" + vMin)
+    print("-------------------")
+
+    #vK1 = ((Sreal-Sprog)/(Sreal/100))*0.0.2
+
+    print("K1:     :")
