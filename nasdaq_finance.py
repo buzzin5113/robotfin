@@ -158,6 +158,6 @@ if __name__ == "__main__":
     print("vMin    :" + vMin)
     print("-------------------")
 
-    #vK1 = ((Sreal-Sprog)/(Sreal/100))*0.0.2
+    vK1 = ((vTarget - vPrice)/(vPrice/100))*0.02
 
     print("K1:     :")
