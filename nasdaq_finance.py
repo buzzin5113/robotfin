@@ -149,8 +149,8 @@ if __name__ == "__main__":
 
     print("vName   :" + vName)
     print("vTicker :" + vTicker)
-    print("vPrice  :" + vPrice)
-    print("vTarget :" + vTarget)
+    print("vPrice  :" + str(vPrice))
+    print("vTarget :" + str(vTarget))
     print("vPE     :" + vPE)
     print("vFPE    :" + vFPE)
     print("vYield  :" + vYield)
