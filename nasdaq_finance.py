@@ -131,7 +131,7 @@ if __name__ == "__main__":
     #args = argparser.parse_args()
 
     with open('stocks.csv', 'r') as file:
-        line in file:
+        for line in file:
 
             ticker = line
             print("Fetching data for %s" % (ticker))
