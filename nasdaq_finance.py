@@ -133,6 +133,7 @@ if __name__ == "__main__":
     with open('stoks.csv', 'r') as file:
         for line in file:
 
+            line = re.sub(r"[^A-Za-z]+", '', line)
             print(line)
             ticker = line
             print("Fetching data for %s" % (ticker))
