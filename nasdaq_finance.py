@@ -148,14 +148,29 @@ if __name__ == "__main__":
                 vTarget = float(scraped_data['key_stock_data']['1 Year Target'])
             except:
                 vTarget = vPrice
-            vPE = float(scraped_data['key_stock_data']['P/E Ratio'])
-            vFPE = float(scraped_data['key_stock_data']['Forward P/E (1y)'])
-            vYield = float(re.sub("[^\d\.]", "", scraped_data['key_stock_data']['Current Yield']))
+            try:
+                vPE = float(scraped_data['key_stock_data']['P/E Ratio'])
+            except:
+                vPE = 30
+            try:
+                vFPE = float(scraped_data['key_stock_data']['Forward P/E (1y)'])
+            except:
+                vFPE = vPE
+            try:
+                vYield = float(re.sub("[^\d\.]", "", scraped_data['key_stock_data']['Current Yield']))
+            except:
+                vYield = 0
             vMaxMin = scraped_data['key_stock_data']['52 Week High / Low']
             lMaxMin = vMaxMin.split("/")
-            vMax = float(re.sub("[^\d\.]", "", lMaxMin[0]))
-            vMin = float(re.sub("[^\d\.]", "", lMaxMin[1]))
-
+            try:
+                vMax = float(re.sub("[^\d\.]", "", lMaxMin[0]))
+            except:
+                vMax = 0
+            try:
+                vMin = float(re.sub("[^\d\.]", "", lMaxMin[1]))
+            except:
+                vMin = 0
+                
             print("vName   :" + vName)
             print("vTicker :" + vTicker)
             print("vPrice  :" + str(vPrice))
