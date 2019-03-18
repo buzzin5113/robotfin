@@ -142,7 +142,7 @@ if __name__ == "__main__":
     vMaxMin = scraped_data['key_stock_data']['52 Week High / Low']
     lMaxMin = vMaxMin.split("/")
     vMax = lMaxMin[0]
-    vMin = iMaxMin[1]
+    vMin = lMaxMin[1]
 
     print("vName   :" + vName)
     print("vTicker :" + vTicker)
