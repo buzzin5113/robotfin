@@ -137,8 +137,8 @@ if __name__ == "__main__":
 
     vName = scraped_data['company_name']
     vTicker = scraped_data['ticker']
-    vPrice = re.sub("[^\d\.]", "", scraped_data['last_sale'][0])
-    vTarget = scraped_data['key_stock_data']['1 Year Target']
+    vPrice = float(re.sub("[^\d\.]", "", scraped_data['last_sale'][0]))
+    vTarget = float(scraped_data['key_stock_data']['1 Year Target'])
     vPE = scraped_data['key_stock_data']['P/E Ratio']
     vFPE = scraped_data['key_stock_data']['Forward P/E (1y)']
     vYield = re.sub("[^\d\.]", "", scraped_data['key_stock_data']['Current Yield'])
