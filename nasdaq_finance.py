@@ -141,7 +141,7 @@ if __name__ == "__main__":
     vTarget = float(scraped_data['key_stock_data']['1 Year Target'])
     vPE = scraped_data['key_stock_data']['P/E Ratio']
     vFPE = scraped_data['key_stock_data']['Forward P/E (1y)']
-    vYield = re.sub("[^\d\.]", "", scraped_data['key_stock_data']['Current Yield'])
+    vYield = float(re.sub("[^\d\.]", "", scraped_data['key_stock_data']['Current Yield']))
     vMaxMin = scraped_data['key_stock_data']['52 Week High / Low']
     lMaxMin = vMaxMin.split("/")
     vMax = re.sub("[^\d\.]", "", lMaxMin[0])
@@ -153,12 +153,13 @@ if __name__ == "__main__":
     print("vTarget :" + str(vTarget))
     print("vPE     :" + vPE)
     print("vFPE    :" + vFPE)
-    print("vYield  :" + vYield)
+    print("vYield  :" + str(vYield))
     print("vMax    :" + vMax)
     print("vMin    :" + vMin)
     print("-------------------")
 
     vK1 = ((vTarget - vPrice)/(vPrice/100))*0.02
+    vK2 = (vYield-2)*(0.5/8)
 
     print("K1:     :", vK1)
-    
+    print("K2:     :", vK2)
