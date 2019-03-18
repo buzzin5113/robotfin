@@ -35,7 +35,7 @@
 
 """
 
-
+import urllib3
 from lxml import html
 import requests
 from time import sleep
@@ -123,6 +123,9 @@ def parse_finance_page(ticker):
 
 
 if __name__ == "__main__":
+
+    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
     argparser = argparse.ArgumentParser()
     argparser.add_argument('ticker', help='Company stock symbol')
     args = argparser.parse_args()
@@ -141,8 +144,8 @@ if __name__ == "__main__":
     vYield = re.sub("[^\d\.]", "", scraped_data['key_stock_data']['Current Yield'])
     vMaxMin = scraped_data['key_stock_data']['52 Week High / Low']
     lMaxMin = vMaxMin.split("/")
-    vMax = lMaxMin[0]
-    vMin = lMaxMin[1]
+    vMax = re.sub("[^\d\.]", "", lMaxMin[0])
+    vMin = re.sub("[^\d\.]", "", lMaxMin[1])
 
     print("vName   :" + vName)
     print("vTicker :" + vTicker)
