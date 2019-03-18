@@ -42,6 +42,7 @@ from time import sleep
 import json
 import argparse
 from random import randint
+import re
 
 
 def parse_finance_page(ticker):
@@ -137,7 +138,7 @@ if __name__ == "__main__":
     vTarget = scraped_data['key_stock_data']['1 Year Target']
     vPE = scraped_data['key_stock_data']['P/E Ratio']
     vFPE = scraped_data['key_stock_data']['Forward P/E (1y)']
-    vYield = ''.join(i for i in scraped_data['key_stock_data']['Current Yield'] if i.isdigit())
+    vYield = re.sub("[^\d\.]", "", scraped_data['key_stock_data']['Current Yield'])
     vMax = scraped_data['key_stock_data']['52 Week High / Low']
     vMin = scraped_data['key_stock_data']['52 Week High / Low']
 
