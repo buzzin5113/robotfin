@@ -139,27 +139,50 @@ if __name__ == "__main__":
     vTicker = scraped_data['ticker']
     vPrice = float(re.sub("[^\d\.]", "", scraped_data['last_sale'][0]))
     vTarget = float(scraped_data['key_stock_data']['1 Year Target'])
-    vPE = scraped_data['key_stock_data']['P/E Ratio']
-    vFPE = scraped_data['key_stock_data']['Forward P/E (1y)']
+    vPE = float(scraped_data['key_stock_data']['P/E Ratio'])
+    vFPE = float(scraped_data['key_stock_data']['Forward P/E (1y)'])
     vYield = float(re.sub("[^\d\.]", "", scraped_data['key_stock_data']['Current Yield']))
     vMaxMin = scraped_data['key_stock_data']['52 Week High / Low']
     lMaxMin = vMaxMin.split("/")
-    vMax = re.sub("[^\d\.]", "", lMaxMin[0])
-    vMin = re.sub("[^\d\.]", "", lMaxMin[1])
+    vMax = float(re.sub("[^\d\.]", "", lMaxMin[0]))
+    vMin = flat(re.sub("[^\d\.]", "", lMaxMin[1]))
 
     print("vName   :" + vName)
     print("vTicker :" + vTicker)
     print("vPrice  :" + str(vPrice))
     print("vTarget :" + str(vTarget))
-    print("vPE     :" + vPE)
-    print("vFPE    :" + vFPE)
+    print("vPE     :" + str(vPE))
+    print("vFPE    :" + str(vFPE))
     print("vYield  :" + str(vYield))
-    print("vMax    :" + vMax)
-    print("vMin    :" + vMin)
+    print("vMax    :" + str(vMax))
+    print("vMin    :" + str(vMin))
     print("-------------------")
 
     vK1 = ((vTarget - vPrice)/(vPrice/100))*0.02
+    if vK1 > 2:
+        vK1 = 2
+    if vK1 < 0:
+        vK1 = 0
     vK2 = (vYield-2)*(0.5/8)
+    if vK2 > 0/5:
+        vK2 = 0/5
+    if vK2 < 0:
+        vK2 = 0
+    vK3 = 1 - (vPE - 5 * (1 / 15))
+    if vK3 > 1:
+        vK3 = 1
+    if vK3 < 0:
+        vK3 = 0
+    vK4 = 0.5 - (vFPE-5*(1/30))
+    if vK4 > 0.5:
+        vK4 = 0.5
+    if vK4 < 0:
+        vK4 = 0
+
+    vSum = vK1 + vK2 + vK3 + vK4
 
     print("K1:     :", vK1)
     print("K2:     :", vK2)
+    print("K3:     :", vK2)
+    print("K4:     :", vK2)
+    print("Summ    :", vSum)
