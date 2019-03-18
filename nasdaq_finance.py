@@ -134,13 +134,15 @@ if __name__ == "__main__":
 
     vName = scraped_data['company_name']
     vTicker = scraped_data['ticker']
-    vPrice = scraped_data['last_sale'][0]
+    vPrice = re.sub("[^\d\.]", "", scraped_data['last_sale'][0])
     vTarget = scraped_data['key_stock_data']['1 Year Target']
     vPE = scraped_data['key_stock_data']['P/E Ratio']
     vFPE = scraped_data['key_stock_data']['Forward P/E (1y)']
     vYield = re.sub("[^\d\.]", "", scraped_data['key_stock_data']['Current Yield'])
-    vMax = scraped_data['key_stock_data']['52 Week High / Low']
-    vMin = scraped_data['key_stock_data']['52 Week High / Low']
+    vMaxMin = scraped_data['key_stock_data']['52 Week High / Low']
+    lMaxMin = vMaxMin.split("/")
+    vMax = lMaxMin[0]
+    vMin = iMaxMin[1]
 
     print("vName   :" + vName)
     print("vTicker :" + vTicker)
