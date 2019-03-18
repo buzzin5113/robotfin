@@ -128,8 +128,17 @@ if __name__ == "__main__":
     ticker = args.ticker
     print("Fetching data for %s" % (ticker))
     scraped_data = parse_finance_page(ticker)
-    print("Writing scraped data to output file")
-    print (scraped_data)
+    #print("Writing scraped data to output file")
+    #print (scraped_data)
 
+    vName = scraped_data['company_name']
+    vTicker = scraped_data['ticker']
+    vPrice = scraped_data['last_sale']
     vPE = scraped_data['key_stock_data']['P/E Ratio']
+    vFPE = scraped_data['key_stock_data']['Forward P/E (1y)']
+    vYield = scraped_data['key_stock_data']['Current Yield']
+    vMax = scraped_data['key_stock_data']['52 Week High / Low']
+    vMin = scraped_data['key_stock_data']['52 Week High / Low']
+
+    print("vName:" + vName)
     print(vPE)
