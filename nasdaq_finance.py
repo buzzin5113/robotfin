@@ -160,4 +160,5 @@ if __name__ == "__main__":
 
     vK1 = ((vTarget - vPrice)/(vPrice/100))*0.02
 
-    print("K1:     :" + vK1)
+    print("K1:     :", vK1)
+    
