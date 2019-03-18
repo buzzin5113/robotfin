@@ -130,7 +130,7 @@ if __name__ == "__main__":
     #argparser.add_argument('ticker', help='Company stock symbol')
     #args = argparser.parse_args()
 
-    with open('stocks.csv', 'r') as file:
+    with open('stoks.csv', 'r') as file:
         for line in file:
 
             ticker = line
