@@ -75,7 +75,7 @@ def parse_finance_page(ticker):
             if response.status_code != 200:
                 raise ValueError("Invalid Response Received From Webserver")
 
-            print("Parsing %s" % (url))
+            #print("Parsing %s" % (url))
             # Adding random delay
             # sleep(randint(1, 3))
             parser = html.fromstring(response.text)
