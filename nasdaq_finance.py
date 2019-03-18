@@ -137,7 +137,7 @@ if __name__ == "__main__":
     vTarget = scraped_data['key_stock_data']['1 Year Target']
     vPE = scraped_data['key_stock_data']['P/E Ratio']
     vFPE = scraped_data['key_stock_data']['Forward P/E (1y)']
-    vYield = scraped_data['key_stock_data']['Current Yield']
+    vYield = ''.join(i for i in scraped_data['key_stock_data']['Current Yield'] if i.isdigit())
     vMax = scraped_data['key_stock_data']['52 Week High / Low']
     vMin = scraped_data['key_stock_data']['52 Week High / Low']
 
