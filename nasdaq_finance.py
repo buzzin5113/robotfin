@@ -205,7 +205,7 @@ if __name__ == "__main__":
                 vK4 = 0.5
             if vK4 < 0:
                 vK4 = 0
-            vK5 = 1 - (vMax - vMin / ((((vMax - vMin)/2) - vPrice))
+            vK5 = 1 - (vMax - vMin / (((vMax - vMin)/2) - vPrice))
 
             vSum = vK1 + vK2 + vK3 + vK4 + vK5
 
