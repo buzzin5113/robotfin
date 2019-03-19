@@ -170,7 +170,7 @@ if __name__ == "__main__":
                 vMin = float(re.sub("[^\d\.]", "", lMaxMin[1]))
             except:
                 vMin = 0
-                
+
             print("vName   :" + vName)
             print("vTicker :" + vTicker)
             print("vPrice  :" + str(vPrice))
@@ -207,6 +207,7 @@ if __name__ == "__main__":
 
             print("K1:     :", vK1)
             print("K2:     :", vK2)
-            print("K3:     :", vK2)
-            print("K4:     :", vK2)
+            print("K3:     :", vK3)
+            print("K4:     :", vK4)
             print("Summ    :", vSum)
+
