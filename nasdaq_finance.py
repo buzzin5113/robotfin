@@ -31,7 +31,10 @@
     Расчет: 0.5 - (P/E-5*(1/30))
             if > 0.5 = 0.5
             if < 0 = 0
-5.
+5. MinMax
+    Стоимость 1 балл
+    Текущая позиция относительно изменения цены за год
+    Расчет: 1 -  (vMax - VMin / ((((vMax - vMin)/2) - vPrice))
 
 """
 
@@ -202,8 +205,9 @@ if __name__ == "__main__":
                 vK4 = 0.5
             if vK4 < 0:
                 vK4 = 0
+            vK5 = 1 - (vMax - vMin / ((((vMax - vMin)/2) - vPrice))
 
-            vSum = vK1 + vK2 + vK3 + vK4
+            vSum = vK1 + vK2 + vK3 + vK4 + vK5
 
             print("K1:     :", vK1)
             print("K2:     :", vK2)
