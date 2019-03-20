@@ -133,6 +133,12 @@ if __name__ == "__main__":
     #argparser.add_argument('ticker', help='Company stock symbol')
     #args = argparser.parse_args()
 
+    with open('out.csv', 'w+') as fileout:
+        out = 'vTicker' + ';' + 'vName' + ';' + 'vPrice' + ';' + 'vTarget' + ';' + 'vPE' + ';' + 'vFPE' \
+              + 'vYield' + ';' + 'vMax' + ';' + 'vMin' + ';' + 'vK1' + ';' + 'vK2' \
+              + ';' + 'vK2' + ';' + 'vK3' + ';' + 'vK4' + ';' + 'vK5' + ';' + 'vSum'
+        fileout.write(out)
+
     with open('stoks.csv', 'r') as file:
         for line in file:
 
@@ -223,8 +229,9 @@ if __name__ == "__main__":
 #            print("v2  :", v2)
 #            print("Summ    :", vSum)
 
-            with open('out.csv', 'w') as fileout:
+            with open('out.csv', 'w+') as fileout:
                 out = vTicker + ';' + vName + ';' + str(vPrice) + ';' + str(vTarget) + ';' + str(vPE) + ';' + str(vFPE)\
                       + str(vYield) + ';' + str(vMax) + ';' + str(vMin) + ';' + str(vK1) + ';' + str(vK2) \
                       + ';' + str(vK2) + ';' + str(vK3) + ';' + str(vK4) + ';' + str(vK5) + ';' + str(vSum)
                 print(out)
+                fileout.write(out)
