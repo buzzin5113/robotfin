@@ -219,5 +219,7 @@ if __name__ == "__main__":
             print("K3:     :", vK3)
             print("K4:     :", vK4)
             print("K5:     :", vK4)
+            print("v1  :", v1)
+            print("v2  :", v2)
             print("Summ    :", vSum)
 
