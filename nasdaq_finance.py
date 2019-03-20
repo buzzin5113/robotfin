@@ -226,5 +226,5 @@ if __name__ == "__main__":
             with open('out.csv', 'w') as fileout:
                 out = vTicker + ';' + vName + ';' + str(vPrice) + ';' + str(vTarget) + ';' + str(vPE) + ';' + str(vFPE)\
                       + str(vYield) + ';' + str(vMax) + ';' + str(vMin) + ';' + str(vK1) + ';' + str(vK2) \
-                      + ';' + str(vK2) + ';' + str(vK3) + ';' + str(vK4) + ';' + str(vK5) + ';' + str(vSumm)
+                      + ';' + str(vK2) + ';' + str(vK3) + ';' + str(vK4) + ';' + str(vK5) + ';' + str(vSum)
                 print(out)
