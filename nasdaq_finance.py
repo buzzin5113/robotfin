@@ -206,7 +206,7 @@ if __name__ == "__main__":
             if vK4 < 0:
                 vK4 = 0
 
-            v1 = vPrice - (vMin + (vMax-Vmin)* 0.5)
+            v1 = vPrice - (vMin + (vMax-vMin) * 0.5)
             if v1 < 0:
                 v1 = v1 * -1
             v2 = (vMax-vMin)*0.5*0.01
