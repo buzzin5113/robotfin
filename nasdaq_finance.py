@@ -205,7 +205,12 @@ if __name__ == "__main__":
                 vK4 = 0.5
             if vK4 < 0:
                 vK4 = 0
-            vK5 = 1 - (vMax - vMin / (((vMax - vMin)/2) - vPrice))
+
+            v1 = vPrice - (vMin + (vMax-Vmin)* 0.5)
+            if v1 < 0:
+                v1 = v1 * -1
+            v2 = (vMax-vMin)*0.5*0.01
+            vK5 = 1 - ((v1/v2)*0.01)
 
             vSum = vK1 + vK2 + vK3 + vK4 + vK5
 
@@ -213,5 +218,6 @@ if __name__ == "__main__":
             print("K2:     :", vK2)
             print("K3:     :", vK3)
             print("K4:     :", vK4)
+            print("K5:     :", vK4)
             print("Summ    :", vSum)
 
