@@ -135,7 +135,7 @@ if __name__ == "__main__":
 
     with open('out.csv', 'a+') as fileout:
         out = 'vTicker' + ';' + 'vName' + ';' + 'vPrice' + ';' + 'vTarget' + ';' + 'vPE' + ';' + 'vFPE' \
-              + 'vYield' + ';' + 'vMax' + ';' + 'vMin' + ';' + 'vK1' + ';' + 'vK2' \
+              + ';' + 'vYield' + ';' + 'vMax' + ';' + 'vMin' + ';' + 'vK1' + ';' + 'vK2' \
               + ';' + 'vK2' + ';' + 'vK3' + ';' + 'vK4' + ';' + 'vK5' + ';' + 'vSum' + '\n'
         fileout.write(out)
 
@@ -231,7 +231,7 @@ if __name__ == "__main__":
 
             with open('out.csv', 'a+') as fileout:
                 out = vTicker + ';' + vName + ';' + str(vPrice) + ';' + str(vTarget) + ';' + str(vPE) + ';' + str(vFPE)\
-                      + str(vYield) + ';' + str(vMax) + ';' + str(vMin) + ';' + str(vK1) + ';' + str(vK2) \
+                      + ';' + str(vYield) + ';' + str(vMax) + ';' + str(vMin) + ';' + str(vK1) + ';' + str(vK2) \
                       + ';' + str(vK2) + ';' + str(vK3) + ';' + str(vK4) + ';' + str(vK5) + ';' + str(vSum) + '\n'
                 print(out)
                 fileout.write(out)
