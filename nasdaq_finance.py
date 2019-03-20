@@ -137,9 +137,9 @@ if __name__ == "__main__":
         for line in file:
 
             line = re.sub(r"[^A-Za-z]+", '', line)
-            print(line)
+#            print(line)
             ticker = line
-            print("Fetching data for %s" % (ticker))
+#            print("Fetching data for %s" % (ticker))
             scraped_data = parse_finance_page(ticker)
             #print("Writing scraped data to output file")
             #print (scraped_data)
@@ -174,16 +174,16 @@ if __name__ == "__main__":
             except:
                 vMin = 0
 
-            print("vName   :" + vName)
-            print("vTicker :" + vTicker)
-            print("vPrice  :" + str(vPrice))
-            print("vTarget :" + str(vTarget))
-            print("vPE     :" + str(vPE))
-            print("vFPE    :" + str(vFPE))
-            print("vYield  :" + str(vYield))
-            print("vMax    :" + str(vMax))
-            print("vMin    :" + str(vMin))
-            print("-------------------")
+#            print("vName   :" + vName)
+#            print("vTicker :" + vTicker)
+#            print("vPrice  :" + str(vPrice))
+#            print("vTarget :" + str(vTarget))
+#            print("vPE     :" + str(vPE))
+#            print("vFPE    :" + str(vFPE))
+#            print("vYield  :" + str(vYield))
+#            print("vMax    :" + str(vMax))
+#            print("vMin    :" + str(vMin))
+#            print("-------------------")
 
             vK1 = ((vTarget - vPrice)/(vPrice/100))*0.02
             if vK1 > 2:
@@ -214,12 +214,17 @@ if __name__ == "__main__":
 
             vSum = vK1 + vK2 + vK3 + vK4 + vK5
 
-            print("K1:     :", vK1)
-            print("K2:     :", vK2)
-            print("K3:     :", vK3)
-            print("K4:     :", vK4)
-            print("K5:     :", vK4)
-            print("v1  :", v1)
-            print("v2  :", v2)
-            print("Summ    :", vSum)
+#            print("K1:     :", vK1)
+#            print("K2:     :", vK2)
+#            print("K3:     :", vK3)
+#            print("K4:     :", vK4)
+#            print("K5:     :", vK5)
+#            print("v1  :", v1)
+#            print("v2  :", v2)
+#            print("Summ    :", vSum)
 
+            with open('out.csv', 'w') as fileout:
+                out = vTicker + ';' + vName + ';' + str(vPrice) + ';' + str(vTarget) + ';' + str(vPE) + ';' + str(vFPE)\
+                      + str(vYield) + ';' + str(vMax) + ';' + str(vMin) + ';' + str(vK1) + ';' + str(vK2) \
+                      + ';' + str(vK2) + ';' + str(vK3) + ';' + str(vK4) + ';' + str(vK5) + ';' + str(vSumm)
+                print(out)
