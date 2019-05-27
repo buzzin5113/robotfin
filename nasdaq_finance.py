@@ -166,6 +166,10 @@ if __name__ == "__main__":
             except:
                 vFPE = vPE
             try:
+                vDividendDate = (scraped_data['key_stock_data']['Dividend Payment Date'])
+            except:
+                vDividendDate = '01/01/2000'
+            try:
                 vYield = float(re.sub("[^\d\.]", "", scraped_data['key_stock_data']['Current Yield']))
             except:
                 vYield = 0
