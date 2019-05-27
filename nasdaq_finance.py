@@ -166,7 +166,7 @@ if __name__ == "__main__":
             except:
                 vFPE = vPE
             try:
-                vDividendDate = (scraped_data['key_stock_data']['Dividend Payment Date'])
+                vDividendDate = (scraped_data['key_stock_data']['Ex Dividend Date'])
             except:
                 vDividendDate = '01/01/2000'
             try:
