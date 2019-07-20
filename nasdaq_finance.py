@@ -227,7 +227,11 @@ if __name__ == "__main__":
             if v1 < 0:
                 v1 = v1 * -1
             v2 = (vMax-vMin)*0.5*0.01
-            vK5 = 1 - ((v1/v2)*0.01)
+
+            try:
+                vK5 = 1 - ((v1/v2)*0.01)
+            except:
+                vK5 = 0
 
             vSum = vK1 + vK2 + vK3 + vK4 + vK5
 
