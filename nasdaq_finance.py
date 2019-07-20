@@ -180,8 +180,8 @@ if __name__ == "__main__":
                 vMaxMin = scraped_data['key_stock_data']['52 Week High / Low']
                 lMaxMin = vMaxMin.split("/")
             except:
-                vMaxMin = 0
-                lMaxMin = 0
+                vMaxMin = 9999
+                lMaxMin = 9999
             try:
                 vMax = float(re.sub("[^\d\.]", "", lMaxMin[0]))
             except:
