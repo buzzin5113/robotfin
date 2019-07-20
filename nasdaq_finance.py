@@ -152,7 +152,10 @@ if __name__ == "__main__":
 
             vName = scraped_data['company_name']
             vTicker = scraped_data['ticker']
-            vPrice = float(re.sub("[^\d\.]", "", scraped_data['last_sale'][0]))
+            try:
+                vPrice = float(re.sub("[^\d\.]", "", scraped_data['last_sale'][0]))
+            except:
+                vPrice = 0
             try:
                 vTarget = float(scraped_data['key_stock_data']['1 Year Target'])
             except:
