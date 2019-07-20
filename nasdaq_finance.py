@@ -155,7 +155,7 @@ if __name__ == "__main__":
             try:
                 vPrice = float(re.sub("[^\d\.]", "", scraped_data['last_sale'][0]))
             except:
-                vPrice = 0
+                vPrice = 9999
             try:
                 vTarget = float(scraped_data['key_stock_data']['1 Year Target'])
             except:
